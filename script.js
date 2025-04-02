@@ -209,3 +209,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Rest of your code...
 });
+
+// WhatsApp functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Create WhatsApp floating button (matches your back-to-top button style)
+    const whatsappFloat = document.createElement('div');
+    whatsappFloat.className = 'whatsapp-float';
+    whatsappFloat.innerHTML = `
+        <a href="https://wa.me/254791338894" style="color: white;">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    `;
+    document.body.appendChild(whatsappFloat);
+
+    // Make WhatsApp button animate on hover like your other buttons
+    whatsappFloat.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+    });
+    
+    whatsappFloat.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+
+    // Add click event for WhatsApp buttons in contact section
+    const whatsappLinks = document.querySelectorAll('.whatsapp-link');
+    whatsappLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(this.href, '_blank');
+        });
+    });
+
+    // Optional: Add WhatsApp to your social links in footer
+    const socialLinks = document.querySelector('.social-links');
+    if (socialLinks) {
+        const whatsappSocial = document.createElement('a');
+        whatsappSocial.href = 'https://wa.me/254791338894';
+        whatsappSocial.innerHTML = '<i class="fab fa-whatsapp"></i>';
+        whatsappSocial.title = 'WhatsApp';
+        socialLinks.appendChild(whatsappSocial);
+        
+        // Apply existing social link styles
+        whatsappSocial.style.display = 'flex';
+        whatsappSocial.style.alignItems = 'center';
+        whatsappSocial.style.justifyContent = 'center';
+    }
+});
