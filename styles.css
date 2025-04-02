@@ -599,6 +599,60 @@
          min-height: 150px;
          resize: vertical;
      }
+/* WhatsApp Styles */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    transition: var(--transition);
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: translateY(-5px);
+}
+
+.whatsapp-float a {
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Contact section WhatsApp link */
+.whatsapp-link {
+    color: var(--primary-green);
+    transition: var(--transition);
+}
+
+.whatsapp-link:hover {
+    color: var(--accent-green);
+}
+
+/* Footer social icon */
+.social-links .fa-whatsapp:hover {
+    background-color: #25D366;
+}
 
      /* ----- Footer ----- */
      footer {
